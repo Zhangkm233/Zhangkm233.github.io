@@ -1,1 +1,295 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="独立游戏制作人技术作品集 - 后端架构与Unity引擎开发">
+    <title>独立游戏制作人技术作品集</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 固定导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">3KkM</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">首页</a></li>
+                <li><a href="#portfolio" class="nav-link">游戏项目</a></li>
+                <li><a href="#about" class="nav-link">关于</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄横幅区 -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-name">3KkM</span>
+                <span class="hero-subtitle">独立游戏制作人</span>
+            </h1>
+            <p class="hero-description">
+                专注于后端架构与Unity引擎开发，致力于构建稳定、高效的游戏系统。
+                通过数据驱动设计与模块化架构，实现复杂游戏逻辑的优雅实现。
+            </p>
+            <a href="#portfolio" class="btn btn-primary">查看游戏项目</a>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+    </section>
+
+<!-- 作品集展示区 -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <h2 class="section-title">游戏项目</h2>
+        <p class="section-subtitle">技术导向的独立游戏开发实践</p>
+        <div class="portfolio-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- 游戏项目 1：魔女的棋局 -->
+                    <div class="carousel-slide">
+                        <a href="project.html?id=1" class="portfolio-card-link">
+                            <article class="portfolio-card">
+                                <!-- 修改点1：删除重复的div，只保留一个card-image容器 -->
+                                <div class="card-image">
+                                    <!-- 修改点2：在img标签中添加内联样式，确保图片自适应 -->
+                                    <img src="images/mn_main.png" alt="《魔女的棋局》游戏策略界面截图" 
+                                         style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-tags">
+                                        <span class="tag">策略解谜</span>
+                                        <span class="tag">2D</span>
+                                        <span class="tag">数据驱动</span>
+                                    </div>
+                                    <h3 class="card-title">魔女的棋局</h3>
+                                    <p class="card-description">
+                                        数据与架构导向的策略游戏，基于ScriptableObject的模块化数据资产系统，实现策划与代码解耦。采用JSON序列化存档系统，支持复杂游戏状态的完整保存与加载。
+                                    </p>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                        <!-- 游戏项目 2：棋兵弈阵 -->
+                        <div class="carousel-slide">
+                            <a href="project.html?id=4" class="portfolio-card-link">
+                                <article class="portfolio-card">
+                                    <img src="images/qbyz_main.png" alt="《棋兵弈阵》游戏主界面截图" 
+                                         style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+                                    <div class="card-content">
+                                        <div class="card-tags">
+                                            <span class="tag">CIGA Game Jam</span>
+                                            <span class="tag">2D</span>
+                                            <span class="tag">数据驱动</span>
+                                            <span class="tag">算法生成</span>
+                                        </div>
+                                        <h3 class="card-title">棋兵弈阵</h3>
+                                        <p class="card-description">
+                                            Game Jam限时开发的2D棋类游戏，通过ScriptableObject构建模块化技能效果系统，实现即插即用的效果制作流程。集成A*寻路算法实现智能敌人决策，采用程序化生成创造动态关卡体验。
+                                        </p>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- 游戏项目 3：泡泡蛙 -->
+                        <div class="carousel-slide">
+                            <a href="project.html?id=3" class="portfolio-card-link">
+                                <article class="portfolio-card">
+                                    <img src="images/ppw_main2.png" alt="《泡泡蛙》游戏主界面截图" 
+                                         style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+                                    <div class="card-content">
+                                        <div class="card-tags">
+                                            <span class="tag">Game Jam</span>
+                                            <span class="tag">2D平台</span>
+                                            <span class="tag">快速原型</span>
+                                        </div>
+                                        <h3 class="card-title">泡泡蛙</h3>
+                                        <p class="card-description">
+                                            限时开发完成的平台跳跃游戏，聚焦性能优化与系统弹性。实现对象池管理系统控制内存分配与GC压力，设计模块化能力升级框架支持即插即用的玩家能力组件。
+                                        </p>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+
+                        <!-- 游戏项目 4：约德尔卓德大冒险 -->
+                        <div class="carousel-slide">
+                            <a href="project.html?id=2" class="portfolio-card-link">
+                                <article class="portfolio-card">
+                                    <img src="images/yde_main.png" alt="《约德尔卓德大冒险》游戏主界面截图" 
+                                         style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">     
+                                    <div class="card-content">
+                                        <div class="card-tags">
+                                            <span class="tag">Roguelike</span>
+                                            <span class="tag">3D</span>
+                                            <span class="tag">程序化</span>
+                                        </div>
+                                        <h3 class="card-title">约德尔卓德大冒险</h3>
+                                        <p class="card-description">
+                                            融合Roguelike随机性与祖玛玩法，通过继承与多态设计构建可扩展的战斗系统。采用Spline曲线路径系统实现灵活的敌人移动，集成Rogue式商店与升级系统。
+                                        </p>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 导航按钮 -->
+                <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="上一个项目">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="下一个项目">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+                <!-- 指示器 -->
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于与技能区 -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">关于我</h2>
+                    <p class="about-description">
+                        一名计算机专业在读学生，具备扎实的面向对象编程与数据结构基础。
+                        爱好广泛，喜欢沟通交流，善于合作，有扎实的计算机基础，有较好的动手能力
+                        和对游戏开发的热情。多次与团队进行游戏合作开发，共同制作自己喜欢玩的游戏。
+                    </p>
+                    <p class="about-description">
+                        在游戏开发中，我注重系统架构的合理性与代码的可维护性。擅长使用
+                        ScriptableObject进行数据资产管理，通过面向对象设计实现灵活的扩展性，
+                        并关注性能优化与内存管理，确保游戏运行的流畅性。
+                    </p>
+                </div>
+                <div class="skills">
+                    <h3 class="skills-title">技术技能</h3>
+                    <div class="skills-list">
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">编程语言</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag skill-proficient">C# (Unity游戏开发)</span>
+                                <span class="skill-tag skill-familiar">JAVA</span>
+                                <span class="skill-tag skill-familiar">Python</span>
+                                <span class="skill-tag skill-familiar">C</span>
+                                <span class="skill-tag skill-familiar">C++</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">游戏引擎</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag skill-proficient">Unity</span>
+                                <span class="skill-tag skill-familiar">GMS2</span>
+                                <span class="skill-tag skill-basic">RenPy</span>
+                                <span class="skill-tag skill-basic">Godot</span>
+                                <span class="skill-tag skill-basic">虚幻4</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">计算机方向</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag skill-basic">SQL</span>
+                                <span class="skill-tag skill-basic">Web</span>
+                                <span class="skill-tag skill-basic">Linux</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">多媒体制作软件</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag skill-proficient">Premiere</span>
+                                <span class="skill-tag skill-basic">Aseprite</span>
+                                <span class="skill-tag skill-basic">FL Studio</span>
+                                <span class="skill-tag skill-basic">Photoshop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系区 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">联系我</h2>
+            <p class="section-subtitle">欢迎技术交流与合作，期待与志同道合的伙伴共同创造优秀的游戏作品</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>邮箱</h4>
+                            <p>zhangkm233@163.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>位置</h4>
+                            <p>中国 · 北京</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Zhangkm233" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <a href="https://space.bilibili.com/28464160" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Bilibili">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polygon points="10 8 16 12 10 16" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="mailto:zhangkm233@163.com" class="social-link" aria-label="Email">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 3KkM. https://github.com/Zhangkm233/Zhangkm233.github.io</p>
+            <a href="#home" class="back-to-top" id="backToTop">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
