@@ -26,7 +26,7 @@ const projectsData = {
             <p>实现基于JSON的完整游戏状态序列化与反序列化系统。系统能够保存和加载复杂的玩家进度数据，包括角色状态、物品库存、关卡进度等。通过自定义序列化接口，确保所有关键游戏对象都能正确转换为JSON格式并完整恢复。</p>
             
             <h2>外部化对话与地图系统</h2>
-            <p>将游戏内的对话树与关卡地图数据剥离为独立文件（JSON或CSV格式），并通过编辑器工具进行打包、加载与管理。这种设计便于内容迭代与本地化拓展，支持多语言切换和动态内容更新，无需重新编译游戏即可更新游戏内容。</p>
+            <p>将游戏内的对话树与关卡地图数据剥离为独立文件（JSON格式），并通过编辑器工具进行打包、加载与管理。这种设计便于内容迭代与本地化拓展，支持多语言切换和动态内容更新，无需重新编译游戏即可更新游戏内容。</p>
         `,
         heroType: 'bilibili',
         heroMedia: {
@@ -291,7 +291,59 @@ const projectsData = {
             github: 'https://github.com/Zhangkm233/CiGAGameJam202506', // GitHub仓库链接
             download: 'https://pan.baidu.com/s/1w6Un9ZRSYLp1Bv3tysoECQ?pwd=ydbm ' // 下载链接
         }
+    },
+    5: {
+    title: '跟你豹了',
+    subtitle: '参加开拓芯奇点律动Vol2的比赛，以膨胀为主题的平台跳跃游戏，使用状态机管理游戏和玩家的对象状态。',
+    category: '平台跳跃',
+    date: '2026年',
+    role: '主程，游戏逻辑开发，玩家操控系统',
+    tools: 'Unity, C#',
+    tags: ['平台跳跃', '知识锁'],
+    description: `参加开拓芯奇点律动Vol2的比赛，以膨胀为主题的平台跳跃游戏。`,
+    heroType: 'bilibili',  // 或 'image'
+    heroMedia: {
+        type: 'bilibili',  // 或 'image'
+        bvid: 'BV1QoFNzUETM',      // 如果是视频
+        // 或 src: 'images/xxx.png' 如果是图片
+        placeholder: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    },
+    gallery: [
+        {
+            src: 'images/gnbl_main.png',
+            alt: '游戏主界面',
+            fullWidth: false
+        },
+        {
+            src: 'images/gnbl_game1.png',
+            alt: '游戏场景',
+            fullWidth: false
+        },
+        {
+            src: 'images/gnbl_tut.png',
+            alt: '游戏教程',
+            fullWidth: false
+        },
+
+        // 更多图片...
+    ],
+    highlights: [
+        {
+            icon: '🔷',
+            title: '状态机管理',
+            description: '使用状态机管理游戏和玩家的对象状态'
+        },
+        {
+            icon: '🔷',
+            title: '地图序列化',
+            description: '使用Tiled软件进行地图开发，序列化后在Unity中使用'
+        }
+    ],
+    links: {
+        github: 'https://github.com/Zhangkm233/Inflate',
+        download: 'https://www.123865.com/s/iIlKVv-9FYvd'
     }
+}
 };
 
 // 初始化页面
