@@ -39,7 +39,7 @@ export const projects = [
     role: '程序：游戏逻辑、UI 架构、开发工具',
     tools: 'Unity, C#, UGUI, 泛型事件总线, 工厂模式',
     tags: ['卡牌构筑', '策略', 'Steam', '框架设计'],
-    cover: img('/images/heartlib_ss1.webp'),
+    cover: img('/images/heartlib_cover.webp'),
     cardDescription:
       '《心镇图书馆》卡牌构筑策略游戏，已上架 Steam 并提供免费试玩 Demo。担任程序岗位，负责游戏逻辑实现、UI 架构设计与开发工具设计，并主导了泛型事件总线、栈式 UGUI 界面框架与工厂化效果系统等底层架构。',
     description: `
@@ -67,11 +67,11 @@ export const projects = [
       <h2>开发工具与 AI 辅助</h2>
       <p>开发了多个供引擎与代码使用的工具，把重复性的配置、检查与生成工作从手工流程中剥离出来。同时结合 AI 工具辅助日常开发，用于代码片段生成、重构建议与文档整理，在保证代码质量的前提下提升了整体开发效率。</p>
     `,
-    heroMedia: { type: 'image', src: img('/images/heartlib_ss1.webp') },
+    heroMedia: { type: 'bilibili', bvid: 'BV1LNJi65E5e' },
     gallery: [
-      { src: img('/images/heartlib_ext1.avif'), alt: '路线规划式战斗界面', fullWidth: false },
-      { src: img('/images/heartlib_ext2.avif'), alt: '以书为单位的牌组构筑', fullWidth: false },
-      { src: img('/images/heartlib_ext3.avif'), alt: '影响系统', fullWidth: true }
+      { src: img('/images/heartlib_route.webp'), alt: '路线式战斗：沿卡牌轨迹规划布防路径', fullWidth: false },
+      { src: img('/images/heartlib_books.webp'), alt: '以书为单位的牌组构筑界面', fullWidth: false },
+      { src: img('/images/heartlib_map.webp'), alt: '关卡地图与节点进度', fullWidth: true }
     ],
     highlights: [
       { icon: '📡', title: '泛型事件总线', description: '类型安全的底层事件架构，系统间彻底解耦' },
