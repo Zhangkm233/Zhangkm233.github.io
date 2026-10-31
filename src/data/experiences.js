@@ -25,7 +25,7 @@ export const experiences = [
     company: '北京首都国际机场股份有限公司',
     department: '信息科技部 · 网络安全',
     title: '网络安全助理工程师',
-    summary: '在信息科技部网络安全方向实习，参与企业级网络安全攻防演练。',
+    summary: '在信息科技部网络安全方向实习，参与企业网络安全攻防演练。',
     highlights: []
   }
 ]

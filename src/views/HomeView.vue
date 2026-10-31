@@ -277,7 +277,7 @@ const socials = [
             </div>
             <div class="fact">
               <dt>语言</dt>
-              <dd>英语 CET-6 · 523 分</dd>
+              <dd>英语 CET-6 · 527 分</dd>
             </div>
             <div class="fact">
               <dt>方向</dt>
