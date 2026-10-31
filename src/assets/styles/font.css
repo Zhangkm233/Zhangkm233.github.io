@@ -1,7 +1,11 @@
+/* 展示字体：得意黑（Smiley Sans）
+   仅用于标题，不用于正文（正文使用系统 UI 字体以保证长文可读性）。
+   路径指向 public/ 下的绝对地址，Vite 构建时会按 base 重写。
+   font-display: swap 保证字体加载期间不阻塞首屏文本渲染。 */
 @font-face {
   font-family: 'Smiley Sans';
   src: url('/fonts/SmileySans-Oblique.otf') format('opentype');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

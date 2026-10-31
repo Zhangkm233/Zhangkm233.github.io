@@ -1,13 +1,93 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="独立游戏制作人技术作品集 - 后端架构与Unity引擎开发" />
-    <title>独立游戏制作人技术作品集</title>
+
+    <title>3KkM · 独立游戏制作人技术作品集</title>
+    <meta
+      name="description"
+      content="3KkM 的个人作品集：独立游戏制作人，专注后端架构与 Unity 引擎开发。包含《心镇图书馆 HeartLib》等 Unity / C# 项目，涵盖卡牌策略、策略解谜、Roguelike 与 Game Jam 作品。"
+    />
+    <meta name="author" content="3KkM" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f8fc" media="(prefers-color-scheme: light)" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="3KkM 作品集" />
+    <meta property="og:title" content="3KkM · 独立游戏制作人技术作品集" />
+    <meta
+      property="og:description"
+      content="独立游戏制作人，专注后端架构与 Unity 引擎开发。卡牌策略、策略解谜、Roguelike 与 Game Jam 作品集。"
+    />
+    <meta property="og:image" content="/images/heartlib_ss1.jpg" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="3KkM · 独立游戏制作人技术作品集" />
+    <meta
+      name="twitter:description"
+      content="独立游戏制作人，专注后端架构与 Unity 引擎开发。"
+    />
+    <meta name="twitter:image" content="/images/heartlib_ss1.jpg" />
+
+    <!-- 图标 -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- 字体预连接与预加载（展示字体仅用于标题） -->
+    <link
+      rel="preload"
+      href="/fonts/SmileySans-Oblique.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+
+    <!-- 结构化数据：帮助搜索引擎理解这是一个作品集站点 -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "3KkM",
+        "jobTitle": "独立游戏制作人",
+        "description": "专注后端架构与 Unity 引擎开发的独立游戏制作人",
+        "url": "https://zhangkm233.github.io/",
+        "sameAs": [
+          "https://github.com/Zhangkm233",
+          "https://space.bilibili.com/28464160"
+        ],
+        "knowsAbout": ["Unity", "C#", "游戏架构", "ScriptableObject", "A* 寻路算法"]
+      }
+    </script>
+
+    <!-- 主题初始化：在首屏渲染前执行，避免亮暗切换闪烁 -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('zhangkm233-theme')
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark'
+          document.documentElement.setAttribute('data-theme', theme)
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="app"></div>
+    <noscript>
+      <p style="padding: 2rem; font-family: system-ui">
+        本站需要 JavaScript 才能浏览。请在浏览器设置中启用 JavaScript。
+      </p>
+    </noscript>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

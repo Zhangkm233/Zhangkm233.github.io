@@ -7,33 +7,54 @@ function toTop() {
 </script>
 
 <template>
-  <button v-show="visible" class="back-to-top" aria-label="返回顶部" @click="toTop">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
+  <transition name="fade">
+    <button
+      v-show="visible"
+      type="button"
+      class="back-to-top"
+      aria-label="返回页面顶部"
+      @click="toTop"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  </transition>
 </template>
 
 <style scoped>
 .back-to-top {
   position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  width: 48px;
-  height: 48px;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: var(--gradient-cta);
   color: #fff;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
-  transition: var(--transition);
+  box-shadow: var(--shadow-brand);
+  transition: transform var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
   z-index: 90;
 }
 
 .back-to-top:hover {
   transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(99, 102, 241, 0.55);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(8px) scale(0.94);
 }
 </style>

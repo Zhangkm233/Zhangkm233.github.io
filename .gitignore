@@ -16,3 +16,8 @@ npm-debug.log*
 # 环境变量
 .env
 .env.local
+# 临时文件与诊断报告
+.tmp_*
+.shot_*.png
+.dom.html
+.acl-report/
