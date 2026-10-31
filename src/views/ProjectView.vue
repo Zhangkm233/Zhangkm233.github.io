@@ -19,7 +19,9 @@ let headingObserver = null
 const hasLinks = computed(() => {
   const l = project.value?.links
   if (!l) return false
-  return Boolean(l.steam?.trim() || l.github?.trim() || l.download?.trim() || l.video?.trim())
+  return Boolean(
+    l.steam?.trim() || l.demo?.trim() || l.github?.trim() || l.download?.trim() || l.video?.trim()
+  )
 })
 
 /** 解析 description 中的 h2，生成目录 */
@@ -146,6 +148,20 @@ onUnmounted(() => {
                 <path d="M11.98 2C6.5 2 2.02 6.2 1.6 11.56l5.4 2.23a2.9 2.9 0 0 1 1.63-.5h.15l2.4-3.48v-.05a3.88 3.88 0 1 1 3.88 3.88h-.09l-3.43 2.45v.12a2.9 2.9 0 0 1-5.74.6L1.98 15.4A10 10 0 1 0 11.98 2Zm-4.1 15.16 1.24.51a2.18 2.18 0 0 0 1.24-4.16l-1.28-.53a2.9 2.9 0 0 1 1.13-.13 2.9 2.9 0 1 1-2.33 4.31Zm9.16-6.02a2.59 2.59 0 1 0-2.59-2.59 2.59 2.59 0 0 0 2.59 2.59Zm0-4.53a1.95 1.95 0 1 1-1.94 1.94 1.95 1.95 0 0 1 1.94-1.94Z" />
               </svg>
               在 Steam 查看
+            </a>
+
+            <a
+              v-if="project.links.demo"
+              :href="project.links.demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--steam"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <path d="M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              试玩 Demo
             </a>
 
             <a

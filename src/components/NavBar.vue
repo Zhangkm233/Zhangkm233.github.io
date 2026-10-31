@@ -18,6 +18,7 @@ const navItems = [
   { id: 'home', label: '首页' },
   { id: 'portfolio', label: '游戏项目' },
   { id: 'about', label: '关于' },
+  { id: 'experience', label: '实习经历' },
   { id: 'contact', label: '联系' }
 ]
 

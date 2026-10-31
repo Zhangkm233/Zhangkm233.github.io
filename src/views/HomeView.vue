@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { projects, categories } from '../data/projects'
+import { experiences } from '../data/experiences'
 import ProjectCard from '../components/ProjectCard.vue'
 
 /* ---------------- 作品筛选 ---------------- */
@@ -252,9 +253,9 @@ const socials = [
           <h2 class="section-title">关于我</h2>
 
           <p class="about-desc">
-            一名计算机专业在读学生，具备扎实的面向对象编程与数据结构基础。
-            爱好广泛，喜欢沟通交流，善于合作，有扎实的计算机基础与较好的动手能力，
-            对游戏开发有持续的热情。多次与团队进行游戏合作开发，共同制作自己喜欢玩的游戏。
+            我是计算机网络工程专业在读学生，具备扎实全面的计算机基础知识，有完整的项目经历和丰富的比赛经验，
+            善于沟通协作，多次组队开展项目的合作开发。能够积极跟进国内外科技发展趋势并融入实践，
+            喜欢浏览国内外的计算机类技术前沿文章和演讲，有较强的自学能力、动手能力和较高的后端开发热情。
           </p>
           <p class="about-desc">
             在游戏开发中，我注重系统架构的合理性与代码的可维护性。擅长使用
@@ -267,6 +268,21 @@ const socials = [
             <li>模块化架构，便于玩法快速迭代</li>
             <li>关注性能与内存，保障低端设备流畅</li>
           </ul>
+
+          <dl class="about-facts">
+            <div class="fact">
+              <dt>教育</dt>
+              <dd>北京信息科技大学 · 计算机学院 · 网络工程（2023.9 — 2027.6）</dd>
+            </div>
+            <div class="fact">
+              <dt>语言</dt>
+              <dd>英语 CET-6 · 523 分</dd>
+            </div>
+            <div class="fact">
+              <dt>方向</dt>
+              <dd>游戏程序开发 · 后端与系统架构</dd>
+            </div>
+          </dl>
         </div>
 
         <!-- 技术技能：整宽网格，分类卡片 -->
@@ -304,6 +320,49 @@ const socials = [
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ==================== 实习经历 ==================== -->
+    <section id="experience" class="section experience">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Experience</p>
+          <h2 class="section-title">实习经历</h2>
+          <p class="section-subtitle">
+            在网络安全与信息技术方向的工程实践，积累了对真实系统部署、测试与安全演练的经验。
+          </p>
+        </div>
+
+        <ol class="timeline">
+          <li
+            v-for="(exp, i) in experiences"
+            :key="exp.company + exp.period"
+            class="timeline-item"
+            v-reveal="i * 80"
+          >
+            <div class="timeline-marker" aria-hidden="true"></div>
+
+            <div class="timeline-card">
+              <div class="exp-head">
+                <div class="exp-main">
+                  <h3 class="exp-title">{{ exp.title }}</h3>
+                  <p class="exp-company">
+                    {{ exp.company }}
+                    <span v-if="exp.department" class="exp-dept">{{ exp.department }}</span>
+                  </p>
+                </div>
+                <time class="exp-period">{{ exp.period }}</time>
+              </div>
+
+              <p class="exp-summary">{{ exp.summary }}</p>
+
+              <ul v-if="exp.highlights.length" class="exp-highlights">
+                <li v-for="h in exp.highlights" :key="h">{{ h }}</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -731,6 +790,36 @@ const socials = [
   background: var(--gradient-brand);
 }
 
+/* 个人信息速览 */
+.about-facts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border-subtle);
+  width: 100%;
+}
+
+.fact {
+  display: flex;
+  gap: var(--sp-4);
+  font-size: var(--fs-sm);
+}
+
+.fact dt {
+  flex-shrink: 0;
+  width: 3.5em;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  padding-top: 0.2em;
+}
+
+.fact dd {
+  color: var(--text-secondary);
+}
+
 /* ---------- 技术技能 ---------- */
 .skills {
   margin-top: var(--sp-8);
@@ -894,6 +983,145 @@ const socials = [
 }
 .skill-item--familiar .skill-level {
   color: var(--accent-400);
+}
+
+/* ============================================================
+   实习经历
+   ============================================================ */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding-left: var(--sp-6);
+}
+
+/* 竖线 */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--brand-500),
+    var(--accent-500),
+    transparent
+  );
+  opacity: 0.5;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: calc(var(--sp-6) * -1 + 2px);
+  top: 1.6rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-base);
+  border: 2px solid var(--brand-500);
+  box-shadow: 0 0 0 3px var(--bg-base);
+}
+
+.timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  transition: border-color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.timeline-card:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  transform: translateY(-2px);
+}
+
+.exp-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-4);
+  margin-bottom: var(--sp-3);
+}
+
+.exp-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.exp-title {
+  font-size: var(--fs-lg);
+  color: var(--text-primary);
+}
+
+.exp-company {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.exp-dept {
+  font-size: var(--fs-xs);
+  font-family: var(--font-mono);
+  color: var(--text-tertiary);
+  padding: 0.1em 0.5em;
+  border-radius: var(--radius-sm);
+  background: var(--bg-inset);
+  border: 1px solid var(--border-subtle);
+}
+
+.exp-period {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--brand-400);
+  padding: 0.2em 0.7em;
+  border-radius: var(--radius-pill);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  white-space: nowrap;
+}
+
+.exp-summary {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-3);
+}
+
+.exp-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.exp-highlights li {
+  position: relative;
+  padding-left: var(--sp-5);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.exp-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient-brand);
 }
 
 /* ============================================================
