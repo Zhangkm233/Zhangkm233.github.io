@@ -44,9 +44,9 @@ const skills = [
   {
     title: '编程语言',
     items: [
-      { name: 'C#', level: 'familiar' },
-      { name: 'Java', level: 'familiar' },
-      { name: 'Python', level: 'familiar' },
+      { name: 'C#', level: 'proficient' },
+      { name: 'Java', level: 'proficient' },
+      { name: 'Python', level: 'proficient' },
       { name: 'C / C++', level: 'familiar' },
       { name: 'Lua', level: 'familiar' },
       { name: 'HTML 等标记语言', level: 'basic' }
@@ -56,8 +56,9 @@ const skills = [
     title: '游戏引擎',
     items: [
       { name: 'Unity', level: 'proficient' },
-      { name: 'Godot', level: 'basic' },
-      { name: 'GMS2', level: 'basic' },
+      { name: 'Godot', level: 'familiar' },
+      { name: 'GMS2', level: 'familiar' },
+      { name: 'Cocos Creator', level: 'basic' },
       { name: '虚幻 4 / 5', level: 'basic' }
     ]
   },
