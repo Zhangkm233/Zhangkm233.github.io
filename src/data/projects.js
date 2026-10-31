@@ -129,123 +129,45 @@ export const projects = [
     }
   },
   {
-    id: 1,
-    title: '魔女的棋局',
+    id: 5,
+    title: '跟你豹了',
     subtitle:
-      '数据与架构导向的策略游戏，核心在于通过可编程的数据资产和高效的资源管理系统，构建复杂而稳定的游戏逻辑',
-    category: '策略解谜',
-    date: '2025年3月 — 5月',
-    role: '主要程序：游戏逻辑与流程、存档、地图系统',
-    tools: 'Unity, C#, ScriptableObject, JSON, MVC',
-    tags: ['策略解谜', '2D', '数据驱动', '魔塔类', '开拓芯 2025'],
-    cover: img('/images/mn_main.webp'),
+      '参加奇点律动 Vol.2 的平台跳跃解谜游戏，使用状态机管理玩家操作、InputSystem 统一按键映射，并通过 Tiled 完成地图工作流',
+    category: '平台跳跃',
+    date: '2026年1月 — 2月',
+    role: '设计与主程：游戏逻辑、玩家角色、关卡制作',
+    tools: 'Unity, C#, 状态机, InputSystem, Tiled',
+    tags: ['平台跳跃', '知识锁', '状态机', '奇点律动 Vol.2'],
+    cover: img('/images/gnbl_main.webp'),
     cardDescription:
-      '数据与架构导向的策略解谜游戏，参加开拓芯 2025。负责游戏大部分逻辑与全部流程开发：JSON 序列化存档、MVC 分离逻辑与显示、本地文本序列化的地图系统，以及基于 ScriptableObject 的可配置文本/图像工具与商店系统。',
+      '参加奇点律动 Vol.2 的平台跳跃解谜游戏。担任设计与主程，负责游戏逻辑、玩家角色与部分关卡制作：状态机控制玩家操作、InputSystem 做按键映射、单例管理音乐与场景过渡、Tiled 制作地图并在 Unity 中反序列化导入。',
     description: `
-      <p>《魔女的棋局》是一款数据与架构导向的策略解谜游戏，2025 年 3 月至 5 月开发，参加<strong>开拓芯 2025</strong>。项目核心在于通过可编程的数据资产和高效的资源管理系统，构建复杂而稳定的游戏逻辑。</p>
-      <p>我担任<strong>主要程序开发</strong>，使用 Unity 引擎、以 C# 为主要语言进行两个月的开发，负责游戏大部分逻辑和全部流程的实现。</p>
-      <h2>MVC 架构分离逻辑与显示</h2>
-      <p>采用 MVC 架构将游戏逻辑与表现层彻底分离。逻辑层不依赖任何 UI 组件，显示层通过订阅逻辑层的数据变化刷新界面。这使得同一套逻辑可以适配不同的表现方式，也让 UI 调整不再有牵一发动全身的风险。</p>
-      <h2>JSON 序列化存档系统</h2>
-      <p>使用 JSON 实现了存档系统的序列化与反序列化。系统能够保存和加载复杂的玩家进度数据，包括角色状态、物品库存、关卡进度等；通过自定义序列化接口，确保所有关键游戏对象都能正确转换为 JSON 格式并完整恢复。</p>
-      <h2>本地文本序列化的地图系统</h2>
-      <p>使用本地文本序列化构建了便于导入与配置的地图系统。关卡数据以纯文本形式维护，配合解析工具直接导入引擎，使关卡编辑与调试不必依赖编辑器手工操作，大幅提升了内容迭代效率。</p>
-      <h2>ScriptableObject 配置工具与商店系统</h2>
-      <p>使用 ScriptableObject 实现了可灵活配置文本与图像的系统工具，策划可直接在编辑器中维护内容而无需改动代码。同时负责商店系统的制作与游戏关卡测试。</p>
+      <p>《跟你豹了》是一款平台跳跃解谜游戏，2026 年 1 月至 2 月开发，参加<strong>奇点律动 Vol.2 Game Jam</strong>。</p>
+      <p>我担任<strong>设计与主程</strong>岗位，使用 Unity 引擎、以 C# 为主要语言进行开发，负责游戏逻辑、玩家角色与部分关卡的制作。</p>
+      <h2>状态机控制玩家操作</h2>
+      <p>使用状态机进行玩家操作逻辑的控制，将移动、跳跃等行为拆分为独立状态，新增能力时只需增加状态并接入转移条件，不必修改既有逻辑。</p>
+      <h2>InputSystem 按键映射</h2>
+      <p>使用 InputSystem 实现不同按键对同一操作的映射，使键位配置与游戏逻辑解耦，玩家可以按自己的习惯操作，也让后续调整键位无需改动代码。</p>
+      <h2>单例管理与视差背景</h2>
+      <p>使用单例模式实现了音乐与场景过渡的衔接，保证跨场景的音频与转场状态连续；同时制作了视差背景效果，增强画面层次感。</p>
+      <h2>Tiled 地图工作流</h2>
+      <p>使用 Tiled 软件进行地图制作，在 Unity 中通过 JSON 文件的反序列化完成地图导入。关卡设计与代码彻底分离，调整地图无需触碰程序逻辑。</p>
     `,
-    heroMedia: { type: 'bilibili', bvid: 'BV1T65LzGEhS' },
+    heroMedia: { type: 'bilibili', bvid: 'BV1QoFNzUETM' },
     gallery: [
-      { src: img('/images/mn_main.webp'), alt: '游戏主界面' },
-      { src: img('/images/mn_game.webp'), alt: '数据资产系统' },
-      { src: img('/images/mn_game2.webp'), alt: '关卡地图系统' },
-      { src: img('/images/mn_gal.webp'), alt: '游戏内对话系统' },
-      { src: img('/images/mn_shop.webp'), alt: '游戏内商店系统' },
-      { src: img('/images/mn_save.webp'), alt: '游戏内存档系统' }
+      { src: img('/images/gnbl_main.webp'), alt: '游戏主界面' },
+      { src: img('/images/gnbl_game1.webp'), alt: '游戏场景' },
+      { src: img('/images/gnbl_tut.webp'), alt: '游戏教程' }
     ],
     highlights: [
-      { icon: '🏛️', title: 'MVC 架构', description: '逻辑与显示彻底分离，UI 调整不影响核心逻辑' },
-      { icon: '💾', title: 'JSON 存档系统', description: '完整的游戏状态序列化与反序列化实现' },
-      { icon: '🗺️', title: '文本序列化地图', description: '本地文本构建地图系统，便于导入与配置' },
-      { icon: '📦', title: 'ScriptableObject 工具', description: '可灵活配置文本与图像的编辑器工具' }
+      { icon: '🎮', title: '状态机玩家控制', description: '玩家操作逻辑拆分状态，易于扩展新能力' },
+      { icon: '⌨️', title: 'InputSystem 映射', description: '不同按键映射同一操作，键位与逻辑解耦' },
+      { icon: '🎵', title: '单例管理', description: '音乐与场景过渡的连续衔接' },
+      { icon: '🗺️', title: 'Tiled 地图工作流', description: 'Tiled 制作 + JSON 反序列化导入 Unity' }
     ],
     links: {
-      github: 'https://github.com/Zhangkm233/DevilTower',
-      download: 'https://pan.baidu.com/s/1oiyPDEEGWtAw8r0lfEHe-g?pwd=y1tm'
-    }
-  },
-  {
-    id: 2,
-    title: '约德尔卓德大冒险',
-    subtitle:
-      '融合 Roguelike 随机性与祖玛玩法，注重通过面向对象的设计和灵活的路径系统来构建可扩展的战斗体验',
-    category: 'Roguelike',
-    date: '2024年11月 — 12月',
-    role: '辅助程序：后端逻辑、游戏层、交互与经济系统',
-    tools: 'Unity, C#, Spline 系统',
-    tags: ['Roguelike', '祖玛核心玩法', '3D', '程序化', '英雄联盟手游 IP 赛道'],
-    cover: img('/images/yde_main.webp'),
-    cardDescription:
-      '融合 Roguelike 随机性与祖玛玩法，参加中传英雄联盟手游小游戏 IP 赛道比赛。担任辅助程序，负责后端游戏逻辑设计、游戏层实现、游戏交互设计与经济系统制作。',
-    description: `
-      <p>《约德尔卓德大冒险》是一款融合 Roguelike 随机性与祖玛核心玩法的游戏，2024 年 11 月至 12 月开发，参加<strong>中传英雄联盟手游小游戏 IP 赛道比赛</strong>。</p>
-      <p>我担任<strong>辅助程序</strong>岗位，主要负责后端游戏逻辑设计、游戏层实现、游戏交互设计，以及经济系统的制作。</p>
-      <h2>继承与多态设计</h2>
-      <p>构建了球体类型的基类与多种派生类（如爆炸球、减速球、穿透球等）。基类定义了通用的碰撞检测、移动逻辑和生命周期管理，派生类通过重写虚方法实现特定的技能效果。通过多态处理碰撞与技能效果，降低了代码耦合度，便于扩展新的球体类型。</p>
-      <h2>Spline 曲线路径系统</h2>
-      <p>利用 Unity 的 Spline 工具为敌人生成和编辑平滑、复杂的移动路径。系统支持在编辑器中可视化编辑路径，支持多种路径类型（直线、曲线、循环等）。敌人在运行时沿 Spline 路径移动，实现了灵活的关卡设计和丰富的视觉表现。</p>
-      <h2>经济系统与 Rogue 式商店</h2>
-      <p>设计并实现了随机关卡中的商店模块与经济系统，包含随机物品刷新、玩家资源结算与永久/临时升级的数据逻辑。系统通过权重表控制物品刷新概率，通过事件系统处理升级效果，支持多种升级类型（属性提升、技能解锁、被动效果等）。</p>
-    `,
-    heroMedia: { type: 'image', src: img('/images/yde_main.webp') },
-    gallery: [
-      { src: img('/images/yde_game1.webp'), alt: '游戏战斗场景' },
-      { src: img('/images/yde_game2.webp'), alt: 'Spline 路径系统' },
-      { src: img('/images/yde_shop.webp'), alt: '商店与升级系统', fullWidth: true }
-    ],
-    highlights: [
-      { icon: '🔷', title: '面向对象设计', description: '继承与多态实现可扩展的球体类型系统' },
-      { icon: '🛤️', title: 'Spline 路径系统', description: '灵活的敌人移动路径编辑与生成' },
-      { icon: '🏪', title: 'Rogue 式系统', description: '随机商店与升级系统的完整实现' }
-    ],
-    links: {
-      download: 'https://share.weiyun.com/7717CpAQ'
-    }
-  },
-  {
-    id: 3,
-    title: '泡泡蛙',
-    subtitle: '在严格时间限制下完成的平台跳跃游戏，聚焦于性能优化与系统弹性的快速实现',
-    category: 'Game Jam',
-    date: '2025年1月',
-    role: '程序：游戏流程、计时系统、技能系统',
-    tools: 'Unity, C#',
-    tags: ['GGJ2025', '2D 平台跳跃', '快速原型'],
-    cover: img('/images/ppw_main2.webp'),
-    cardDescription:
-      '参加 GGJ2025 Game Jam 的平台跳跃游戏。担任程序岗位，负责部分游戏流程、游戏计时系统与技能系统的制作。',
-    description: `
-      <p>《泡泡蛙》是在 <strong>GGJ2025 Game Jam</strong> 限时开发环境下完成的平台跳跃游戏，2025 年 1 月开发。项目聚焦于快速实现符合题目的核心玩法，展现了在时间压力下如何构建稳定、高效的游戏系统。</p>
-      <p>我担任<strong>程序</strong>岗位，负责部分游戏流程、游戏计时系统与技能系统的制作。</p>
-      <h2>开发背景</h2>
-      <p>Game Jam 开发环境要求在极短时间内完成可玩的游戏原型。这要求开发者必须快速做出技术决策，优先实现核心功能，同时确保代码质量和系统稳定性。</p>
-      <h2>游戏流程与计时系统</h2>
-      <p>负责游戏部分流程的搭建与计时系统的实现，保证关卡节奏与时间压力能够按设计稳定运转，为玩家提供清晰的反馈。</p>
-      <h2>技能系统</h2>
-      <p>设计并实现玩家的技能系统，将不同能力拆分为可独立配置与组合的模块，使玩家能力可以在关卡中逐步解锁与叠加，同时保持代码的可扩展性。</p>
-    `,
-    heroMedia: { type: 'bilibili', bvid: 'BV1gjwrecEed' },
-    gallery: [
-      { src: img('/images/ppw_main.webp'), alt: '游戏场景' },
-      { src: img('/images/ppw_game.webp'), alt: '技能系统' },
-      { src: img('/images/ppw_story.webp'), alt: '游戏开场', fullWidth: true }
-    ],
-    highlights: [
-      { icon: '⏱️', title: '计时系统', description: '实现关卡计时与流程节奏控制' },
-      { icon: '✨', title: '技能系统', description: '模块化能力组件，支持逐步解锁与组合' },
-      { icon: '⚡', title: '快速原型', description: '在 GGJ2025 限时条件下完成可玩原型' }
-    ],
-    links: {
-      download: 'https://www.123684.com/s/iIlKVv-O0Ivd'
+      github: 'https://github.com/Zhangkm233/Inflate',
+      download: 'https://www.123865.com/s/iIlKVv-9FYvd'
     }
   },
   {
@@ -293,45 +215,123 @@ export const projects = [
     }
   },
   {
-    id: 5,
-    title: '跟你豹了',
+    id: 1,
+    title: '魔女的棋局',
     subtitle:
-      '参加奇点律动 Vol.2 的平台跳跃解谜游戏，使用状态机管理玩家操作、InputSystem 统一按键映射，并通过 Tiled 完成地图工作流',
-    category: '平台跳跃',
-    date: '2026年1月 — 2月',
-    role: '设计与主程：游戏逻辑、玩家角色、关卡制作',
-    tools: 'Unity, C#, 状态机, InputSystem, Tiled',
-    tags: ['平台跳跃', '知识锁', '状态机', '奇点律动 Vol.2'],
-    cover: img('/images/gnbl_main.webp'),
+      '数据与架构导向的策略游戏，核心在于通过可编程的数据资产和高效的资源管理系统，构建复杂而稳定的游戏逻辑',
+    category: '策略解谜',
+    date: '2025年3月 — 5月',
+    role: '主要程序：游戏逻辑与流程、存档、地图系统',
+    tools: 'Unity, C#, ScriptableObject, JSON, MVC',
+    tags: ['策略解谜', '2D', '数据驱动', '魔塔类', '开拓芯 2025'],
+    cover: img('/images/mn_main.webp'),
     cardDescription:
-      '参加奇点律动 Vol.2 的平台跳跃解谜游戏。担任设计与主程，负责游戏逻辑、玩家角色与部分关卡制作：状态机控制玩家操作、InputSystem 做按键映射、单例管理音乐与场景过渡、Tiled 制作地图并在 Unity 中反序列化导入。',
+      '数据与架构导向的策略解谜游戏，参加开拓芯 2025。负责游戏大部分逻辑与全部流程开发：JSON 序列化存档、MVC 分离逻辑与显示、本地文本序列化的地图系统，以及基于 ScriptableObject 的可配置文本/图像工具与商店系统。',
     description: `
-      <p>《跟你豹了》是一款平台跳跃解谜游戏，2026 年 1 月至 2 月开发，参加<strong>奇点律动 Vol.2 Game Jam</strong>。</p>
-      <p>我担任<strong>设计与主程</strong>岗位，使用 Unity 引擎、以 C# 为主要语言进行开发，负责游戏逻辑、玩家角色与部分关卡的制作。</p>
-      <h2>状态机控制玩家操作</h2>
-      <p>使用状态机进行玩家操作逻辑的控制，将移动、跳跃等行为拆分为独立状态，新增能力时只需增加状态并接入转移条件，不必修改既有逻辑。</p>
-      <h2>InputSystem 按键映射</h2>
-      <p>使用 InputSystem 实现不同按键对同一操作的映射，使键位配置与游戏逻辑解耦，玩家可以按自己的习惯操作，也让后续调整键位无需改动代码。</p>
-      <h2>单例管理与视差背景</h2>
-      <p>使用单例模式实现了音乐与场景过渡的衔接，保证跨场景的音频与转场状态连续；同时制作了视差背景效果，增强画面层次感。</p>
-      <h2>Tiled 地图工作流</h2>
-      <p>使用 Tiled 软件进行地图制作，在 Unity 中通过 JSON 文件的反序列化完成地图导入。关卡设计与代码彻底分离，调整地图无需触碰程序逻辑。</p>
+      <p>《魔女的棋局》是一款数据与架构导向的策略解谜游戏，2025 年 3 月至 5 月开发，参加<strong>开拓芯 2025</strong>。项目核心在于通过可编程的数据资产和高效的资源管理系统，构建复杂而稳定的游戏逻辑。</p>
+      <p>我担任<strong>主要程序开发</strong>，使用 Unity 引擎、以 C# 为主要语言进行两个月的开发，负责游戏大部分逻辑和全部流程的实现。</p>
+      <h2>MVC 架构分离逻辑与显示</h2>
+      <p>采用 MVC 架构将游戏逻辑与表现层彻底分离。逻辑层不依赖任何 UI 组件，显示层通过订阅逻辑层的数据变化刷新界面。这使得同一套逻辑可以适配不同的表现方式，也让 UI 调整不再有牵一发动全身的风险。</p>
+      <h2>JSON 序列化存档系统</h2>
+      <p>使用 JSON 实现了存档系统的序列化与反序列化。系统能够保存和加载复杂的玩家进度数据，包括角色状态、物品库存、关卡进度等；通过自定义序列化接口，确保所有关键游戏对象都能正确转换为 JSON 格式并完整恢复。</p>
+      <h2>本地文本序列化的地图系统</h2>
+      <p>使用本地文本序列化构建了便于导入与配置的地图系统。关卡数据以纯文本形式维护，配合解析工具直接导入引擎，使关卡编辑与调试不必依赖编辑器手工操作，大幅提升了内容迭代效率。</p>
+      <h2>ScriptableObject 配置工具与商店系统</h2>
+      <p>使用 ScriptableObject 实现了可灵活配置文本与图像的系统工具，策划可直接在编辑器中维护内容而无需改动代码。同时负责商店系统的制作与游戏关卡测试。</p>
     `,
-    heroMedia: { type: 'bilibili', bvid: 'BV1QoFNzUETM' },
+    heroMedia: { type: 'bilibili', bvid: 'BV1T65LzGEhS' },
     gallery: [
-      { src: img('/images/gnbl_main.webp'), alt: '游戏主界面' },
-      { src: img('/images/gnbl_game1.webp'), alt: '游戏场景' },
-      { src: img('/images/gnbl_tut.webp'), alt: '游戏教程' }
+      { src: img('/images/mn_main.webp'), alt: '游戏主界面' },
+      { src: img('/images/mn_game.webp'), alt: '数据资产系统' },
+      { src: img('/images/mn_game2.webp'), alt: '关卡地图系统' },
+      { src: img('/images/mn_gal.webp'), alt: '游戏内对话系统' },
+      { src: img('/images/mn_shop.webp'), alt: '游戏内商店系统' },
+      { src: img('/images/mn_save.webp'), alt: '游戏内存档系统' }
     ],
     highlights: [
-      { icon: '🎮', title: '状态机玩家控制', description: '玩家操作逻辑拆分状态，易于扩展新能力' },
-      { icon: '⌨️', title: 'InputSystem 映射', description: '不同按键映射同一操作，键位与逻辑解耦' },
-      { icon: '🎵', title: '单例管理', description: '音乐与场景过渡的连续衔接' },
-      { icon: '🗺️', title: 'Tiled 地图工作流', description: 'Tiled 制作 + JSON 反序列化导入 Unity' }
+      { icon: '🏛️', title: 'MVC 架构', description: '逻辑与显示彻底分离，UI 调整不影响核心逻辑' },
+      { icon: '💾', title: 'JSON 存档系统', description: '完整的游戏状态序列化与反序列化实现' },
+      { icon: '🗺️', title: '文本序列化地图', description: '本地文本构建地图系统，便于导入与配置' },
+      { icon: '📦', title: 'ScriptableObject 工具', description: '可灵活配置文本与图像的编辑器工具' }
     ],
     links: {
-      github: 'https://github.com/Zhangkm233/Inflate',
-      download: 'https://www.123865.com/s/iIlKVv-9FYvd'
+      github: 'https://github.com/Zhangkm233/DevilTower',
+      download: 'https://pan.baidu.com/s/1oiyPDEEGWtAw8r0lfEHe-g?pwd=y1tm'
+    }
+  },
+  {
+    id: 3,
+    title: '泡泡蛙',
+    subtitle: '在严格时间限制下完成的平台跳跃游戏，聚焦于性能优化与系统弹性的快速实现',
+    category: 'Game Jam',
+    date: '2025年1月',
+    role: '程序：游戏流程、计时系统、技能系统',
+    tools: 'Unity, C#',
+    tags: ['GGJ2025', '2D 平台跳跃', '快速原型'],
+    cover: img('/images/ppw_main2.webp'),
+    cardDescription:
+      '参加 GGJ2025 Game Jam 的平台跳跃游戏。担任程序岗位，负责部分游戏流程、游戏计时系统与技能系统的制作。',
+    description: `
+      <p>《泡泡蛙》是在 <strong>GGJ2025 Game Jam</strong> 限时开发环境下完成的平台跳跃游戏，2025 年 1 月开发。项目聚焦于快速实现符合题目的核心玩法，展现了在时间压力下如何构建稳定、高效的游戏系统。</p>
+      <p>我担任<strong>程序</strong>岗位，负责部分游戏流程、游戏计时系统与技能系统的制作。</p>
+      <h2>开发背景</h2>
+      <p>Game Jam 开发环境要求在极短时间内完成可玩的游戏原型。这要求开发者必须快速做出技术决策，优先实现核心功能，同时确保代码质量和系统稳定性。</p>
+      <h2>游戏流程与计时系统</h2>
+      <p>负责游戏部分流程的搭建与计时系统的实现，保证关卡节奏与时间压力能够按设计稳定运转，为玩家提供清晰的反馈。</p>
+      <h2>技能系统</h2>
+      <p>设计并实现玩家的技能系统，将不同能力拆分为可独立配置与组合的模块，使玩家能力可以在关卡中逐步解锁与叠加，同时保持代码的可扩展性。</p>
+    `,
+    heroMedia: { type: 'bilibili', bvid: 'BV1gjwrecEed' },
+    gallery: [
+      { src: img('/images/ppw_main.webp'), alt: '游戏场景' },
+      { src: img('/images/ppw_game.webp'), alt: '技能系统' },
+      { src: img('/images/ppw_story.webp'), alt: '游戏开场', fullWidth: true }
+    ],
+    highlights: [
+      { icon: '⏱️', title: '计时系统', description: '实现关卡计时与流程节奏控制' },
+      { icon: '✨', title: '技能系统', description: '模块化能力组件，支持逐步解锁与组合' },
+      { icon: '⚡', title: '快速原型', description: '在 GGJ2025 限时条件下完成可玩原型' }
+    ],
+    links: {
+      download: 'https://www.123684.com/s/iIlKVv-O0Ivd'
+    }
+  },
+  {
+    id: 2,
+    title: '约德尔卓德大冒险',
+    subtitle:
+      '融合 Roguelike 随机性与祖玛玩法，注重通过面向对象的设计和灵活的路径系统来构建可扩展的战斗体验',
+    category: 'Roguelike',
+    date: '2024年11月 — 12月',
+    role: '辅助程序：后端逻辑、游戏层、交互与经济系统',
+    tools: 'Unity, C#, Spline 系统',
+    tags: ['Roguelike', '祖玛核心玩法', '3D', '程序化', '英雄联盟手游 IP 赛道'],
+    cover: img('/images/yde_main.webp'),
+    cardDescription:
+      '融合 Roguelike 随机性与祖玛玩法，参加中传英雄联盟手游小游戏 IP 赛道比赛。担任辅助程序，负责后端游戏逻辑设计、游戏层实现、游戏交互设计与经济系统制作。',
+    description: `
+      <p>《约德尔卓德大冒险》是一款融合 Roguelike 随机性与祖玛核心玩法的游戏，2024 年 11 月至 12 月开发，参加<strong>中传英雄联盟手游小游戏 IP 赛道比赛</strong>。</p>
+      <p>我担任<strong>辅助程序</strong>岗位，主要负责后端游戏逻辑设计、游戏层实现、游戏交互设计，以及经济系统的制作。</p>
+      <h2>继承与多态设计</h2>
+      <p>构建了球体类型的基类与多种派生类（如爆炸球、减速球、穿透球等）。基类定义了通用的碰撞检测、移动逻辑和生命周期管理，派生类通过重写虚方法实现特定的技能效果。通过多态处理碰撞与技能效果，降低了代码耦合度，便于扩展新的球体类型。</p>
+      <h2>Spline 曲线路径系统</h2>
+      <p>利用 Unity 的 Spline 工具为敌人生成和编辑平滑、复杂的移动路径。系统支持在编辑器中可视化编辑路径，支持多种路径类型（直线、曲线、循环等）。敌人在运行时沿 Spline 路径移动，实现了灵活的关卡设计和丰富的视觉表现。</p>
+      <h2>经济系统与 Rogue 式商店</h2>
+      <p>设计并实现了随机关卡中的商店模块与经济系统，包含随机物品刷新、玩家资源结算与永久/临时升级的数据逻辑。系统通过权重表控制物品刷新概率，通过事件系统处理升级效果，支持多种升级类型（属性提升、技能解锁、被动效果等）。</p>
+    `,
+    heroMedia: { type: 'image', src: img('/images/yde_main.webp') },
+    gallery: [
+      { src: img('/images/yde_game1.webp'), alt: '游戏战斗场景' },
+      { src: img('/images/yde_game2.webp'), alt: 'Spline 路径系统' },
+      { src: img('/images/yde_shop.webp'), alt: '商店与升级系统', fullWidth: true }
+    ],
+    highlights: [
+      { icon: '🔷', title: '面向对象设计', description: '继承与多态实现可扩展的球体类型系统' },
+      { icon: '🛤️', title: 'Spline 路径系统', description: '灵活的敌人移动路径编辑与生成' },
+      { icon: '🏪', title: 'Rogue 式系统', description: '随机商店与升级系统的完整实现' }
+    ],
+    links: {
+      download: 'https://share.weiyun.com/7717CpAQ'
     }
   }
 ]
